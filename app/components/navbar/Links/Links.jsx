@@ -1,29 +1,45 @@
-import Link from "next/link"
-import styles from "./links.module.css"
+"use client";
+
+import styles from "./links.module.css";
+import NavLink from "./navLink/navLink";
+import { useState } from "react";
+
+const links = [ 
+    { 
+        title: "Closet",
+        path: "/closet",
+    }, 
+    { 
+        title: "About",
+        path: "/about",
+    },
+    { 
+        title: "Contact", 
+        path: "/contact", 
+    }
+];
 
 const Links = () => { 
 
-    const links = [ 
-        { 
-            title: "Closet",
-            path: "/closet",
-        }, 
-        { 
-            title: "About",
-            path: "/about",
-        },
-        { 
-            title: "Contact", 
-            path: "/contact", 
-        }
-    ];
+    const[open, setOpen] = useState(false);
 
     return(
+        <div className={styles.container}>
         <div className={styles.links}>
             {links.map((link=>(
-                <Link href={link.path} key={link.title}>{link.title}</Link>
+                <NavLink item={link} key={link.title}/>
             )))}
 
+        </div>
+            <button className={styles.menuButton} onClick={()=>setOpen(prev=>!prev)}>Menu</button>
+            { 
+                open && <div className={styles.mobileLinks}>
+                    {links.map((link) => (
+                        <NavLink item={link} key={link.title}/>
+                    ))}
+                    
+                    </div>
+            }
         </div>
 
     )
