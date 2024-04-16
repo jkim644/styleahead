@@ -1,7 +1,27 @@
+import styles from "./closet.module.css"
+import Image from "next/image"
+
 const Closet = () => {
     return (
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <div>Closet</div>
+      <main>
+        <div className={styles.container}>Closet
+          <div className={styles.textContainer}>
+            <h1>Style Ahead Closet</h1>
+            <p>Hi</p>
+            <div className={styles.buttons}>
+              <button className = {styles.button}>Add new item</button>
+              <button className = {styles.button}>Remove item </button>
+              <button className = {styles.button}>Generate outfit</button>
+              <button className = {styles.button}>Generate schedule </button>
+            </div>
+            <div className={styles.brands}>
+              <Image src="/clothing_robot.png" fill className={styles.brandImg}></Image>
+            </div>
+          </div>
+          <div className={styles.imgContainer}>
+            <Image src="/Analytics.gif"></Image>
+          </div>
+        </div>
       </main>
     )
     }
