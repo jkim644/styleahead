@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+
+<p>This is the chat page</p>
+
+<p id="username">Your profile! - Chat App Logged In As {{username}}, <a href="{{url_for('unlogger')}}">Click here to logout</a></p>   
+<h2>User: {{username}}</h2>
+
+<p>Enter your message here:</p>
+<textarea name="message" id="message" form="new_msg_form"></textarea>
+
+<form action="/new-message/" method="POST" id="new_msg_form">
+    <br />
+    <input type="hidden" id="author" name="author" value={{username}}>
+    <input type="submit" value="Submit" id="submit_new_message" name="submit_new_message"/>
+</form>
+
+<form action="/messages/" method="get" id="get_message_form" name="get_message_form">
+    <input type="hidden" id="msg_author" name="msg_author" value={{username}}>
+</form>
+
+<h3>Chat window</h3>
+<table id="message_block"></table>
+
+
+{% endblock %}
+

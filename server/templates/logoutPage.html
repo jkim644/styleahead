@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<script type="text/javascript">
+    alert("You have successfully logged out. You can close this tab");
+</script>
+{% endblock %}
+
+{% block body %}
+
+<h2>You have been logged out</h2>
+<a href="{{url_for('login_controller')}}">Return to Login</a>
+{% endblock %}

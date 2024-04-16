@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<p>Log in - Chat App</p>
+<div>
+<form action="/login/" method="post" id="login_form">
+    Username:  <input type="text" name="user_login" />
+    <br />
+    Password:  <input type="text" name="user_pass" />
+    <br />
+    <input type="submit" value="Sign In" />
+</form>
+<a href="{{url_for('register_controller')}}" id="login_link">Register</a>
+</div>
+{% endblock %}
