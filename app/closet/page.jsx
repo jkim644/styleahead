@@ -7,6 +7,8 @@ import React, { useEffect, useState} from "react";
 
 const Closet = () => {
 
+  // Flask + React stuff (if needed)
+
     const [message, setMessage] = useState("Loading");
     const [people, setPeople] = useState([])
 
